@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: pajs98klo-java-springboot-gitops
+  description: This is GitOps manifest for pajs98klo-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=pajs98klo-java-springboot
+    backstage.io/kubernetes-id: pajs98klo-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: pajs98klo-java-springboot   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:pajs98klo-java-springboot
